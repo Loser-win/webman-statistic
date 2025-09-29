@@ -129,7 +129,7 @@ class Bootstrap implements \Webman\Bootstrap
                                 $item = implode('\', \'', $item);
                             }
                         }
-                        if ("Redis::get('ping')" === "Redis::{$command->command}('" . implode('\', \'', $command->parameters) . "')") {
+                        if ("Redis::get('PING')" === "Redis::{$command->command}('" . implode('\', \'', $command->parameters) . "')") {
                             return;
                         }
                         Statistic::redis($command->command, implode('\', \'', $command->parameters), $command->time, ['connection' => $command->connectionName]);
